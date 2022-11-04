@@ -10,18 +10,25 @@ BDD é técnica de desenvolvimento ágil que visa integrar regras de negócios c
 também, que BDD é a evolução do TDD. Isto porque, os testes ainda orientam o desenvolvimento, ou seja, primeiro se escreve o teste e depois o código.
 
 ## Para que serve o Cucumber? ##
+![Todos passos feitos com sucesso!](https://miro.medium.com/max/936/1*r0UqtChar0tzusPS7fi9YQ.png) 
 Cucumber é usado para descrever o valor do negócio em uma linguagem natural, por isso permite que equipes de desenvolvimento de software descrevam como o software deve
 se comportar em texto simples, escrevendo especificações através de exemplos. Cocumber é bastante usado no metódo BDD.
 
-### ![Documentação de todos os casos com comentários](https://media.discordapp.net/attachments/895889200270946347/1038185764950905043/image.png?width=713&height=468) ###
+# Imagens do desenvolvimento #
 
-### ![Descrição do cenário](https://media.discordapp.net/attachments/895889200270946347/1038184666357841980/image.png?width=960&height=337) ###
+#### Documentação de todos os casos com comentários ####
+![Documentação de todos os casos com comentários](https://media.discordapp.net/attachments/895889200270946347/1038185764950905043/image.png?width=713&height=468) 
 
-### ![Executando após colar a saída do console](https://media.discordapp.net/attachments/895889200270946347/1038186969269813278/image.png?width=960&height=147) ###
-Aqui vimos que ele nos informa que os cenários não foram feitos e necessita ser implementado.
+#### Descrição dos cenário ####
+![Descrição dos cenário](https://media.discordapp.net/attachments/895889200270946347/1038184666357841980/image.png?width=960&height=337) 
 
-### ![Todos passos feitos com sucesso!](https://media.discordapp.net/attachments/895889200270946347/1038186337687310357/image.png?width=960&height=237) ###
+#### Aqui vimos que ele nos informa que os cenários não foram feitos e necessitam ser implementados. ####
+![Executando após colar a saída do console](https://media.discordapp.net/attachments/895889200270946347/1038186969269813278/image.png?width=960&height=147) 
 
-### ![Todos passos !](https://media.discordapp.net/attachments/895889200270946347/1038186337687310357/image.png?width=960&height=237) ###
+#### Todos passos feitos com sucesso! ####
+![Todos passos feitos com sucesso!](https://media.discordapp.net/attachments/895889200270946347/1038186337687310357/image.png?width=960&height=237) 
+
+
+
 
 
