@@ -13,5 +13,3 @@ Feature: Cliente faz saque de dinheiro Com um Cliente, eu gostaria de sacar dinh
     Given Um cliente comum com saldo atual de -300 reais
     When solicitar um saque no valor de 200 reais
     Then não deve efutuar o saque e deve retornar a mensagem Saldo Insuficiente
-
-
