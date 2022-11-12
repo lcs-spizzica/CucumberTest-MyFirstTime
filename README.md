@@ -1,34 +1,56 @@
 # CucumberTest-MyFirstTime
-Tendo o primeiro contato com o framework cucumber e fazendo um projeto teste para a prática.
+Implementação para resolução dos cenários Junit com Cocumber.
 
-## O cenário do problema a ser resolvido ##
-Um cliente especial conseguir sacar uma quantia em dinheiro com o saldo negativado, somente o cliente especial possui essa possibilidade, já um cliente comum com o saldo
-negativado não poderá efutuar o saque e será informando que seu saldo é insuficiente.
+## Implementação ##
+![JavaImplementacao](https://media.discordapp.net/attachments/895889200270946347/1040767114547568740/image.png)
+A implementação do código foi realizada na classe conta e adiocionando os atributos: Conta:int, saque:int, clienteEspecial:boolean e saldo:int
 
-## O que é BDD e para que serve? ##
-BDD é técnica de desenvolvimento ágil que visa integrar regras de negócios com linguagem de programação, focando o comportamento do software. Além disso, pode-se dizer 
-também, que BDD é a evolução do TDD. Isto porque, os testes ainda orientam o desenvolvimento, ou seja, primeiro se escreve o teste e depois o código.
+## Adcionando JUnit para testes unitários ##
+#### Aplicando as dependências do JUnit ####
+![Depency Junit](https://media.discordapp.net/attachments/895889200270946347/1040766309702574231/image.png)
+O JUnit é um framework open-source, que se assemelha ao raio de testes software java, com suporte à criação de testes automatizados na linguagem de programação Java. Esse framework facilita a criação e manutenção do código para a automação de testes com apresentação dos resultados.
 
-## Para que serve o Cucumber? ##
-![Todos passos feitos com sucesso!](https://miro.medium.com/max/936/1*r0UqtChar0tzusPS7fi9YQ.png) 
-Cucumber é usado para descrever o valor do negócio em uma linguagem natural, por isso permite que equipes de desenvolvimento de software descrevam como o software deve
-se comportar em texto simples, escrevendo especificações através de exemplos. Cocumber é bastante usado no metódo BDD.
+## Adicionando a classe Runner ##
+![Foto da classe runner](https://media.discordapp.net/attachments/895889200270946347/1040769345246216253/image.png)
+
+(JUnit Runner with @CucumberOptions)Está classe serve para executar Junit Runner com o cocumber e assim ter anotações para axiliar os testes feitos.
+
+#### Explicando anotações das classes Runner ####
+
+##### Snippets - O Cucumber gera snippets de código no estilo Underscore por padrão. Se você quiser alterar o formato dos snippets de pepino, poderá definir o tipo de snippet em suas opções de pepino. Existem dois tipos de fragmentos #####
+
+##### Pretty - Imprime a fonte Gherkin com cores adicionais e rastreamentos de pilha para erros. #####
+
+#### Monochrome - Esta opção pode ser definida como verdadeira ou falsa (o valor padrão é falso). Se for definido como verdadeiro, significa que a saída do console para o teste do Cucumber é muito mais legível. E se for definido como falso, a saída do console não será tão legível quanto deveria. Para praticar basta adicionar o código 'monochrome = true' na classe TestRunner. ####
+
+##### STRICT - Se a opção strict for definida como false, no momento da execução, se o pepino encontrar alguma etapa indefinida/pendente, o pepino não falhará na execução e as etapas indefinidas serão ignoradas e BUILD será bem-sucedido. E se a opção Strict estiver definida como verdadeira, no momento da execução, se o pepino encontrar alguma etapa indefinida/pendente, o pepino falhará na execução e as etapas indefinidas serão marcadas como falha e BUILD é FALHA. Esta é a aparência da saída do console: #####
+
+##### DryRun - Esta opção pode ser definida como true ou false (o valor padrão é false). Se estiver definido como verdadeiro, significa que o Cucumber apenas verificará se cada etapa mencionada no arquivo de recurso possui código correspondente escrito no arquivo de definição de etapa ou não. Portanto, caso alguma função seja perdida na Definição de Etapa para qualquer Etapa no Arquivo de Recurso, ela nos dará a mensagem. Portanto, se você estiver escrevendo cenários primeiro e depois implementando definições de etapas, adicione dryRun = true.#####
+
+##### Features - Opções de recursos ajuda o Cucumber a localizar o arquivo Feature na estrutura de pastas do projeto. Tudo o que precisamos fazer é especificar o caminho da pasta e o Cucumber encontrará automaticamente todos os arquivos de extensão ' .features ' na pasta. #####
 
 # Imagens do desenvolvimento #
 
-#### Documentação de todos os casos com comentários ####
-![Documentação de todos os casos com comentários](https://media.discordapp.net/attachments/895889200270946347/1038185764950905043/image.png?width=713&height=468) 
+#### Condição para executar os métodos de acordo com o tipo do cliente ####
+![](https://media.discordapp.net/attachments/895889200270946347/1040778028021719090/image.png?width=1440&height=487) 
 
-#### Descrição dos cenário ####
-![Descrição dos cenário](https://media.discordapp.net/attachments/895889200270946347/1038184666357841980/image.png?width=960&height=337) 
+#### Given - 1 - cenário - cliente especial ####
+![Given - 1 - cenário - cliente especial](https://media.discordapp.net/attachments/895889200270946347/1040778469572886558/image.png) 
 
-#### Aqui vimos que ele nos informa que os cenários não foram feitos e necessitam ser implementados. ####
-![Executando após colar a saída do console](https://media.discordapp.net/attachments/895889200270946347/1038186969269813278/image.png?width=960&height=147) 
+#### When - 1 - cenário - cliente especial ####
+![When - 1 - cenário - cliente especial](https://media.discordapp.net/attachments/895889200270946347/1040778797177376899/image.png?width=1440&height=413) 
 
-#### Todos passos feitos com sucesso! ####
-![Todos passos feitos com sucesso!](https://media.discordapp.net/attachments/895889200270946347/1038186337687310357/image.png?width=960&height=237) 
+#### Then - 1 - cenário - cliente especial ####
+![Then - 1 - cecário - cliente especial](https://media.discordapp.net/attachments/895889200270946347/1040778797177376899/image.png?width=1440&height=413) 
 
 
+#### Given - 2 - cenário - cliente comum ####
+![Given - 2 - cenário - cliente comum](https://media.discordapp.net/attachments/895889200270946347/1040779479590649956/image.png) 
 
+#### When - 2 - cenário - cliente comum ####
+![When - 2 - cenário - cliente comum](https://media.discordapp.net/attachments/895889200270946347/1040779539242033182/image.png) 
+
+#### Then - 2 - cenário - cliente comum ####
+![Then - 2 - cecário - cliente comum](https://media.discordapp.net/attachments/895889200270946347/1040779803575455825/image.png?width=1440&height=443) 
 
 
