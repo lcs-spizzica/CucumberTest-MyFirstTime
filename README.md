@@ -32,25 +32,25 @@ O JUnit é um framework open-source, que se assemelha ao raio de testes software
 # Imagens do desenvolvimento #
 
 #### Condição para executar os métodos de acordo com o tipo do cliente ####
-![](https://media.discordapp.net/attachments/895889200270946347/1040778028021719090/image.png?width=1440&height=487) 
+![](https://cdn.discordapp.com/attachments/895889200270946347/1041180784729534465/image.png) 
 
 #### Given - 1 - cenário - cliente especial ####
-![Given - 1 - cenário - cliente especial](https://media.discordapp.net/attachments/895889200270946347/1040778469572886558/image.png) 
+![Given - 1 - cenário - cliente especial](https://cdn.discordapp.com/attachments/895889200270946347/1041180944045969408/image.png) 
 
 #### When - 1 - cenário - cliente especial ####
-![When - 1 - cenário - cliente especial](https://media.discordapp.net/attachments/895889200270946347/1040778797177376899/image.png?width=1440&height=413) 
+![When - 1 - cenário - cliente especial](https://cdn.discordapp.com/attachments/895889200270946347/1041181034177376276/image.png) 
 
 #### Then - 1 - cenário - cliente especial ####
-![Then - 1 - cecário - cliente especial](https://media.discordapp.net/attachments/895889200270946347/1040778797177376899/image.png?width=1440&height=413) 
+![Then - 1 - cecário - cliente especial](https://cdn.discordapp.com/attachments/895889200270946347/1041181122291310602/image.png) 
 
 
 #### Given - 2 - cenário - cliente comum ####
-![Given - 2 - cenário - cliente comum](https://media.discordapp.net/attachments/895889200270946347/1040779479590649956/image.png) 
+![Given - 2 - cenário - cliente comum](https://cdn.discordapp.com/attachments/895889200270946347/1041181292642971689/image.png) 
 
 #### When - 2 - cenário - cliente comum ####
-![When - 2 - cenário - cliente comum](https://media.discordapp.net/attachments/895889200270946347/1040779539242033182/image.png) 
+![When - 2 - cenário - cliente comum](https://cdn.discordapp.com/attachments/895889200270946347/1041181362264211577/image.png) 
 
 #### Then - 2 - cenário - cliente comum ####
-![Then - 2 - cecário - cliente comum](https://media.discordapp.net/attachments/895889200270946347/1040779803575455825/image.png?width=1440&height=443) 
+![Then - 2 - cecário - cliente comum](https://cdn.discordapp.com/attachments/895889200270946347/1041181450713710622/image.png) 
 
 
