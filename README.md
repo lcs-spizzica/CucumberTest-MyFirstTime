@@ -1,5 +1,9 @@
 # CucumberTest-MyFirstTime
-Implementação para resolução dos cenários Junit com Cocumber.
+## Implementação para resolução dos cenários utilizando Junit com Cocumber. ##
+![Cocumber](https://miro.medium.com/max/936/1*r0UqtChar0tzusPS7fi9YQ.png)
+![Cocumber](https://junit.org/junit4/images/junit5-banner.png)
+
+
 
 ## Implementação ##
 ![JavaImplementacao](https://media.discordapp.net/attachments/895889200270946347/1040767114547568740/image.png)
@@ -29,28 +33,49 @@ O JUnit é um framework open-source, que se assemelha ao raio de testes software
 
 ##### Features - Opções de recursos ajuda o Cucumber a localizar o arquivo Feature na estrutura de pastas do projeto. Tudo o que precisamos fazer é especificar o caminho da pasta e o Cucumber encontrará automaticamente todos os arquivos de extensão ' .features ' na pasta. #####
 
-# Imagens do desenvolvimento #
+# Imagens do desenvolvimento # 
 
-#### Condição para executar os métodos de acordo com o tipo do cliente ####
-![](https://cdn.discordapp.com/attachments/895889200270946347/1041180784729534465/image.png) 
 
 #### Given - 1 - cenário - cliente especial ####
-![Given - 1 - cenário - cliente especial](https://cdn.discordapp.com/attachments/895889200270946347/1041180944045969408/image.png) 
+![Given - 1 - cenário - cliente especial](https://media.discordapp.net/attachments/895889200270946347/1043294550732570695/image.png) 
 
 #### When - 1 - cenário - cliente especial ####
-![When - 1 - cenário - cliente especial](https://cdn.discordapp.com/attachments/895889200270946347/1041181034177376276/image.png) 
+![When - 1 - cenário - cliente especial](https://media.discordapp.net/attachments/895889200270946347/1043294671876661358/image.png) 
 
 #### Then - 1 - cenário - cliente especial ####
-![Then - 1 - cecário - cliente especial](https://cdn.discordapp.com/attachments/895889200270946347/1041181122291310602/image.png) 
+![Then - 1 - cecário - cliente especial](https://media.discordapp.net/attachments/895889200270946347/1043294723848282162/image.png) 
 
 
 #### Given - 2 - cenário - cliente comum ####
-![Given - 2 - cenário - cliente comum](https://cdn.discordapp.com/attachments/895889200270946347/1041181292642971689/image.png) 
+![Given - 2 - cenário - cliente comum](https://media.discordapp.net/attachments/895889200270946347/1043294818073321512/image.png) 
 
 #### When - 2 - cenário - cliente comum ####
-![When - 2 - cenário - cliente comum](https://cdn.discordapp.com/attachments/895889200270946347/1041181362264211577/image.png) 
+![When - 2 - cenário - cliente comum](https://media.discordapp.net/attachments/895889200270946347/1043294891788222584/image.png) 
 
 #### Then - 2 - cenário - cliente comum ####
-![Then - 2 - cecário - cliente comum](https://cdn.discordapp.com/attachments/895889200270946347/1041181450713710622/image.png) 
+![Then - 2 - cecário - cliente comum](https://media.discordapp.net/attachments/895889200270946347/1043295174584963132/image.png) 
 
 
+# Saída no console # 
+
+### Execuntando o 1 cenário onde o cliente especial está efetuando um saque de 100 reais, com o saldo atual de -300 reais e assim ficando com saldo final de -400 ###
+![Exec cénario 1](https://media.discordapp.net/attachments/895889200270946347/1043297013976014918/image.png)
+
+#### Saída no console Junit avisando que todos passos deram certos e o segundo cenário não foi executado pois o tipo do cliente é ESPECIAL ####
+![saída no console](https://media.discordapp.net/attachments/895889200270946347/1043298011532513371/image.png)
+
+### Execuntando o 2 cenário onde o cliente normal está efetuando um saque de 200 rais, com o saldo atual de -250 reais e recebendo a mensagem "Saldo Insuficiente" ###
+![Exec cénario 2](https://media.discordapp.net/attachments/895889200270946347/1043299189209186386/image.png)
+
+#### Saída no console Junit avisando que todos passos deram certos, junto a saída do conselo informando que saldo é insoficiente e o primeiro cenário não foi executado pois o tipo do cliente É NORMAL ####
+![saída no console](https://media.discordapp.net/attachments/895889200270946347/1043300311701401670/image.png)
+
+### Execuntando o 2 cenário onde o cliente normal está efetuando um saque de 100 rais, com o saldo atual de 250 reais e operação realizada com sucesso ###
+![Exec cénario 2](https://media.discordapp.net/attachments/895889200270946347/1043301288668049448/image.png)
+
+#### Saída no console Junit avisando que todos passos deram certos, junto a saída do conselo informando que saque foi realizado! ####
+![saída no console](https://media.discordapp.net/attachments/895889200270946347/1043303227011125248/image.png)
+
+# Conclusão # 
+
+ Combinando as ferramentas podemos implementar BDD em nossos projetos muito facilmente e assim diminiuir erros no desenvolvimentos.
