@@ -1,43 +1,77 @@
-//import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 /**
- * 
- *  Classe conta criada e as variaveis cliente, saldo e saque.
- *  Get e Set criado para receber os valores das variaveis.
- * 
+ * Aqui estamos criando uma classe para fazer os testes em cada cen�rio
+ * @author lucas
+ *
  */
-
-public class Conta {
-
-	
-	public boolean clienteEspecial = true;
+public class Conta {	
+/**
+ * Temos o atributos da nossa classe logo abaixo:
+ * clienteEspecial: para representar se o cliente � do tipo especial
+ * conta: representa o saldo atual da conta do cliente 
+ * saldo: vari�vel para receber o valor que o cliente deseja sacar.
+ */
+	public boolean clienteEspecial = false;
 	public int conta;
 	public int saque;
 	public int saldo;
 	
-//	@Before
-	public void before() {
-		if (this.clienteEspecial == true) {
-			System.out.println("Entrou na 1 condição");
-			um_cliente_especial_com_saldo_atual_de_reais(conta);
-			for_solicitado_um_saque_no_valor_de_reais(saque);
-			deve_efutuar_o_saque_e_atualizar_o_saldo_da_conta_para_reais(saldo);
-		} else {
-			um_cliente_comum_com_saldo_atual_de_reais(conta);
-			solicitar_um_saque_no_valor_de_reais(saque);
-			nao_deve_efutuar_o_saque_e_deve_retornar_a_mensagem_saldo_insuficiente();
-			System.out.print("Entrou na 2 condição\"");
-		}
-		
+	
+	
+/**
+ * A tag before segundo a documenta��o do Cocumber serve para executar um met�do antes de todos os
+ * outros
+ */
+
+	public boolean isClienteEspecial() {
+		return clienteEspecial;
 	}
 
+
+	public void setClienteEspecial(boolean clienteEspecial) {
+		this.clienteEspecial = clienteEspecial;
+	}
+
+
+	public int getConta() {
+		return conta;
+	}
+
+
+	public void setConta(int conta) {
+		this.conta = conta;
+	}
+
+
+	public int getSaque() {
+		return saque;
+	}
+
+
+	public void setSaque(int saque) {
+		this.saque = saque;
+	}
+
+
+	public int getSaldo() {
+		return saldo;
+	}
+
+
+	public void setSaldo(int saldo) {
+		this.saldo = saldo;
+	}
+
+
 	/**
-	 * 1 Cenario - Cliente do tipo especial fazendo saque com sua conta negativada
+	 *1 Cenário - Cenário que o Cliente do tipo especial quer realizar um saque em sua conta negativada ou positivada.
+	 * Se a conta estiver negativa e ocorrer o saque, o saldo ficará mais negativado do que estava.
+	 * Caso sua conta esteja positivada, o saque vai realizar a diferen�a e atualizar o valor.
 	 * 
-	 * Onde um cliente do tipo especial podera solicitar um saque mesmo com sua conta negativada
 	 * 
 	 * 
 	 * @param int1 este parametro serve para informar o valor que o cliente especial ira sacar da conta
@@ -45,103 +79,100 @@ public class Conta {
 	 * 
 	 * @author Lucas Spizzica
 	 * 
-	 * Aqui declaramos que o cliente esoecial possui um saldo negativado de 200 reais
+	 * Dado: um cliente especial com o saldo atual de X
 	 */
 
-	
-	@Given("Um cliente especial com saldo atual de {int} reais")
-	public void um_cliente_especial_com_saldo_atual_de_reais(Integer conta) {
-		if (conta instanceof Integer && this.clienteEspecial == true) {
-			this.conta = conta;
+	/*Neste metódo e cliente especial está recebendo valor que está na sua conta*/
+	@Given("^Um cliente especial com saldo atual de -(\\d+) reais$")
+	public void um_cliente_especial_com_saldo_atual_de_reais(int conta) throws Throwable {
+		if (this.clienteEspecial == true) {
+			setConta(conta);
 		} else
-			throw new io.cucumber.java.PendingException();
+			  throw new PendingException();
 	}
 
 	
 	/**
-	 * Aqui o cliente solicitará um saque no valor de 100 reais e a solicitaçao sera feita 
+	 * Quando: o cliente solicitar� um saque no valor qualquer em reais e a solicitação sera feita 
+	 * @param saque
+	 */
+	@When("^for solicitado um saque no valor de (\\d+) reais$")
+	public void for_solicitado_um_saque_no_valor_de_reais(int saque) throws Throwable {
+		if (this.clienteEspecial == true) {
+			setSaque(saque);
+		} else
+			  throw new PendingException();
+	}
+
+	
+	/**
+	 * Então: efutuará a operação de saque da conta e atualizar o valor do saldo
 	 * @param int1
 	 */
-	@When("for solicitado um saque no valor de {int} reais")
-	public void for_solicitado_um_saque_no_valor_de_reais(Integer saque) {
-		
-
-		if (saque instanceof Integer && this.clienteEspecial == true) {
-			this.saque = saque;
+	@Then("^deve efutuar o saque e atualizar o saldo da conta para -(\\d+) reais$")
+	public void deve_efutuar_o_saque_e_atualizar_o_saldo_da_conta_para_reais(int saque) throws Throwable {
+		if (this.clienteEspecial == true) {
+			setSaldo(getConta() - (getConta()));
 		} else
-			throw new io.cucumber.java.PendingException();
+			  throw new PendingException();
 	}
 
-	
 	/**
-	 * Aqui efutuara a operação da sua conta e aumentará sua divida na sua conta
-	 * @param int1
+	 * 2 Cenário - Cenário Cliente comum tentando fazer um saque com conta negativada
+	 * 
+	 * Dado: o cliente do tipo comum irá realizar um saque com o saldo de sua conta
+	 * so o saldo for negativo, notificar com a mensagem: "Saldo insuficinete", se for positivo e 
+	 * e o saldo maior que o saque, será liberado o seu dinheiro
+	 * 
+	 * 
+	 * Aqui um cliente comum com saldo negativo ou positivo sera declarado
+	 * @param conta, este parametro representa o valor no o cliente vai possuir em sua conta
 	 */
-	@Then("deve efutuar o saque e atualizar o saldo da conta para {int} reais")
-	public void deve_efutuar_o_saque_e_atualizar_o_saldo_da_conta_para_reais(Integer saldo) {
-
-		if (saldo instanceof Integer && this.clienteEspecial == true) {
-			saldo = this.conta - (this.saque);
-		} else
-			throw new io.cucumber.java.PendingException();
-	}
-
-	
-	/**
-	 * 2 - Cenário Cliente comum tentando fazer um saque com conta negativada
-	 * 
-	 * neste cenário o cliente do tipo comum irá tentar fazer um saque com o saldo da sua conta negativado 
-	 * e não conseguirá e terá uma mensagem "Saldo insuficinete"
-	 * 
-	 * 
-	 * Aqui um cliente comum com saldo negativo sera declarado 
-	 * 
-	 * @param int1 este parametro representa o valor no qual o cliente comum tentara sacar da sua conta\
-	 * @author Lucas Spizzica
-	 */
-	@Given("Um cliente comum com saldo atual de {int} reais")
-	public void um_cliente_comum_com_saldo_atual_de_reais(Integer conta) {
+	@Given("^Um cliente comum com saldo atual de (\\d+) reais$")
+	public void umClienteComumComSaldoAtualDeReais(int conta) throws Throwable {
 		
-		if (conta instanceof Integer && this.clienteEspecial == false) {
-			this.conta = conta;
+		if (this.clienteEspecial == false) {
+			setConta(conta);
 		} 
 		else {
-			throw new io.cucumber.java.PendingException();
+			  throw new PendingException();
 			}
 	}
 
 	
 	/**
-	 * Aqui o cliente comum irá solicitar um saque da sua conta em um determinado valor
-	 * 
-	 * @param int1 aqui sera o valor que o cliente comum solitará para sacar
+	 * Quando: o cliente comum solicitar um saque em sua conta com determinado valor
+	 * @param saque será atribuido com o valor que o cliente deseja sacar
 	 */
-	@When("solicitar um saque no valor de {int} reais")
-	public void solicitar_um_saque_no_valor_de_reais(Integer saque) {
+	@When("^solicitar um saque no valor de (\\d+) reais$")
+	public void solicitar_um_saque_no_valor_de_reais(int saque) throws Throwable {
 	
-		if (saque instanceof Integer && this.clienteEspecial == false) {
-			this.saque = saque;
+		if ( this.clienteEspecial == false) {
+			setSaque(saque);
 		} else
-			throw new io.cucumber.java.PendingException();	
+			  throw new PendingException();
 	}
 
 	/**
 	 * 
-	 * Nessa parte o codigo retorna a mensagem de saldo insuficiente. Pois o cliente comum está com saldo negativo.
-	 *  Como solicitado pelo Then o cliente comum não pode receber o saque pois o seu saldo está negativo.       
-	 *  É realizado o if com uma condição de saldo e tipo do cliente.
-	 *  Sendo cliente comum e saldo negativo é passada a mensagem Saldo Insuficiente. e no else é realizada a execeção.
+	 * Então: Aqui verificará se o saldo do cliente é positivo e o saque for abaixo da quantia que deseja sacar, 
+	 * se for verdadeiro o saque vai ser feito. Caso não seja verdade, o cliente ão vai conseguir sacar e deve 
+	 * receber a mensagem "Saldo insuficiente!!" indicando que não possui um saldo suficiente para realizar a operação
+	 *  de saque.
 	 *  
 	 */
-	@Then("nao deve efutuar o saque e deve retornar a mensagem Saldo Insuficiente")
-	public void nao_deve_efutuar_o_saque_e_deve_retornar_a_mensagem_saldo_insuficiente() {
-		if (this.conta > 0 && this.saque < this.conta && this.clienteEspecial == false ) {
-			saldo = this.conta - (this.saque);
-		} else if (this.saque > this.conta) {
-			System.out.println("Saldo insuficiente");
+	@Then("^não deve efutuar o saque e deve retornar a mensagem Saldo Insuficiente$")
+	public void não_deve_efutuar_o_saque_e_deve_retornar_a_mensagem_Saldo_Insuficiente() throws Throwable {
+		if (this.conta > 0 && this.saque <= this.conta && this.clienteEspecial == false ) {
+			setSaldo(getConta() - (getSaldo()));
+			System.out.println("Saque realizado com sucesso!");
+			
+		} else if (this.saque > this.conta || this.conta < 0 ) {
+			System.out.println("Saldo insuficiente!!!!!!");
 		}
 		else{
-			throw new io.cucumber.java.PendingException();}
+			  throw new PendingException();
+			}
 		
 	}
 }
