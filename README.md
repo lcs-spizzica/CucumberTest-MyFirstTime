@@ -3,7 +3,7 @@ Tendo o primeiro contato com o framework cucumber e fazendo um projeto teste par
 
 ## O cenário do problema a ser resolvido ##
 Um cliente especial conseguir sacar uma quantia em dinheiro com o saldo negativado, somente o cliente especial possui essa possibilidade, já um cliente comum com o saldo
-negativado não poderá efutuar o saque e será informando que seu saldo é insuficiente.
+negativado não poderá efutuar o saque e será informado que seu saldo é insuficiente.
 
 ## O que é BDD e para que serve? ##
 BDD é técnica de desenvolvimento ágil que visa integrar regras de negócios com linguagem de programação, focando o comportamento do software. Além disso, pode-se dizer 
