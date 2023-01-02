@@ -78,4 +78,4 @@ O JUnit é um framework open-source, que se assemelha ao raio de testes software
 
 # Conclusão # 
 
- Combinando as ferramentas podemos implementar BDD em nossos projetos muito facilmente e assim diminiuir erros no desenvolvimentos.
+ Combinando as ferramentas podemos implementar BDD em nossos projetos muito facilmente e assim diminiuir erros no desenvolvimento.
